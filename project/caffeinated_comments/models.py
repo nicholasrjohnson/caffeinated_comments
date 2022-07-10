@@ -6,7 +6,7 @@ from django.utils import timezone
 class Author(models.Model):
     uuid = models.UUIDField(unique=True, editable=False, default=uuid.uuid4)
     name = models.CharField(max_length=200)
-    email = models.EmailField()
+    email = models.EmailField(null=True)
 
 class Comment(models.Model):
     body = models.CharField(max_length=500)
